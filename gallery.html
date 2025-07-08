@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery - Redeemed Gospel Church Suneka</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="logo">Redeemed Gospel Church</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="sermons.html">Sermons</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li class="dropdown">
+        <a href="#">Ministries</a>
+        <ul class="dropdown-menu">
+          <li><a href="youth.html">Youth</a></li>
+          <li><a href="worship.html">Worship</a></li>
+          <li><a href="sundayschool.html">Sunday School</a></li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- PHOTO GALLERY -->
+  <section class="media-section">
+    <h1>Our Church Life in Pictures</h1>
+    <div class="gallery-grid">
+      <!-- 30 images -->
+      <img src="images/ministries/gallery1.jpg" alt="Church Event 1" onclick="openLightbox(this.src)">
+      <img src="images/ministries/gallery2.jpg" alt="Church Event 2" onclick="openLightbox(this.src)">
+      <img src="images/ministries/gallery3.jpg" alt="Church Event 3" onclick="openLightbox(this.src)">
+      <img src="images/ministries/gallery4.jpg" alt="Church Event 4" onclick="openLightbox(this.src)">
+      <img src="images/ministries/gallery5.jpg" alt="Church Event 5" onclick="openLightbox(this.src)">
+      <img src="images/ministries/gallery6.jpg" alt="Church Event 6" onclick="openLightbox(this.src)">
+      <img src="images/ministries/gallery7.jpg" alt="Church Event 7" onclick="openLightbox(this.src)">
+      <img src="images/gallery8.jpg" alt="Church Event 8" onclick="openLightbox(this.src)">
+      <img src="images/gallery9.jpg" alt="Church Event 9" onclick="openLightbox(this.src)">
+      <img src="images/gallery10.jpg" alt="Church Event 10" onclick="openLightbox(this.src)">
+  
+    </div>
+  </section>
+
+  <!-- VIDEO GALLERY -->
+  <section class="media-section">
+    <h1>Watch Highlights</h1>
+    <div class="video-grid">
+     </div>
+  </section>
+  
+  <!-- NEW: Mission & Values -->
+  <section class="info-section">
+    <h2>Our Mission & Values</h2>
+    <p>At Redeemed Gospel Church Suneka, our mission is to reach souls, nurture believers and impact our community through the love of Christ. We value faith, service and fellowship.</p>
+  </section>
+
+  <!-- NEW: Pastor's Message -->
+  <section class="info-section highlight">
+    <h2>Message from Our Revalent</h2>
+    <p>"We warmly welcome you to join us as we worship, grow and serve together. It is our prayer that you experience God's transforming power in your life. May God richly bless you." <br> Revalent Fabiola</p>
+  </section>
+
+  <!-- NEW: Testimonials -->
+  <section class="info-section testimonials">
+    <h2>What People Are Saying</h2>
+    <div class="testimonial">
+      <p>"I found a true spiritual family here. The love and support is unmatched!"</p>
+      <strong> Grace j.</strong>
+    </div>
+    <div class="testimonial">
+      <p>"Attending this church changed my life. I’m growing deeper in my faith every week."</p>
+      <strong>Mathew K.</strong>
+    </div>
+  </section>
+
+  <!-- NEW: Call to Action -->
+  <section class="info-section cta">
+    <h2>Come Visit Us!</h2>
+    <p>We would love to have you join us for a service or event. Connect with us, get involved and see what God can do in your life.</p>
+    <a href="contact.html" class="btn">Contact Us</a>
+  </section>
+
+</main>
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="">
+</div>
+<div class="nav-buttons">
+  <a href="events.html" class="btn">⬅ Back
+</div>   
+<script src="js/scripts.js"></script>
+</body>
+</html>

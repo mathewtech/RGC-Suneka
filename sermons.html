@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sermons - Redeemed Gospel Church Suneka</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<header>
+  <img src="images/ministries/logo.jpg" alt="Church Logo" class="logo" />
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="sermons.html">Sermons</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li class="dropdown">
+        <a href="#">Ministries</a>
+        <ul class="dropdown-menu">
+          <li><a href="youth.html">Youth Ministry</a></li>
+          <li><a href="worship.html">Praise & Worship</a></li>
+          <li><a href="sundayschool.html">Sunday School</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero banner with background image -->
+<section class="hero sermons-hero">
+  <div class="overlay">
+    <h1>Latest Sermons</h1>
+    <p>Be uplifted by God’s Word every week.</p>
+  </div>
+</section>
+
+<main class="sermons-section">
+
+  <!-- Intro message -->
+  <section class="intro-text">
+    <h2>Grow in Faith with Us</h2>
+    <p>Our sermons are designed to encourage, challenge, and build your faith. Whether you missed a Sunday or want to revisit a powerful message, you can find them all here.</p>
+  </section>
+
+  <!-- Featured Sermon video -->
+  <section class="featured-sermon">
+    <h2>Featured Sermon</h2>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/dpulNlCOreY" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Sermon List loaded by JS -->
+  <section class="sermon-list">
+    <h2>Recent Sermons</h2>
+    <div id="sermon-list" class="sermon-cards">
+      <!-- Sermons will be loaded by sermons.js -->
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="sermon-tags">
+    <h3>Explore by Topic</h3>
+    <div class="tags">
+      <span class="tag">Faith</span>
+      <span class="tag">Prayer</span>
+      <span class="tag">Family</span>
+      <span class="tag">Healing</span>
+      <span class="tag">Purpose</span>
+    </div>
+  </section>
+
+  <!-- Quote / testimonial -->
+  <section class="sermon-quote">
+    <blockquote>
+      “So then faith comes by hearing, and hearing by the word of God.” 
+      <cite>- Romans 10:17</cite>
+    </blockquote>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-sermons">
+    <h2>Want to Grow Deeper?</h2>
+    <p>Connect with a small group or Bible study this week. Let’s grow together!</p>
+    <a href="contact.html" class="button">Contact Us</a>
+  </section>
+
+</main>
+
+<div class="nav-buttons">
+  <a href="index.html" class="btn">⬅ Back</a>
+  <a href="events.html" class="btn">Next ➡</a>
+</div>
+
+<footer>
+  <p>&copy; 2025 Redeemed Gospel Church - Suneka</p>
+</footer>
+
+<script src="js/sermons.js"></script>
+</body>
+</html>

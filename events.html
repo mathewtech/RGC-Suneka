@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events - Redeemed Gospel Church</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <header>
+        <img src="images/ministries/logo.jpg" alt="Church Logo" class="logo" />
+        <nav>
+          <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+          <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li class="dropdown">
+              <a href="#">Ministries</a>
+              <ul class="dropdown-menu">
+                <li><a href="youth.html">Youth Ministry</a></li>
+                <li><a href="worship.html">Praise & Worship</a></li>
+                <li><a href="sundayschool.html">Sunday School</a></li>
+                
+              </ul>
+              <li><a href="gallery.html">Gallery</a></li>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        
+      </header>
+      
+
+      <main class="events-section">
+
+        <!-- HERO SECTION -->
+        <section class="event-hero">
+          <h1>Upcoming Events</h1>
+          <p>Join us as we grow in faith, fellowship, and service. Stay updated with what's happening at RGC Suneka.</p>
+        </section>
+      
+        <!-- FEATURED EVENT -->
+        <section class="featured-event">
+          <h2>Featured Event</h2>
+          <div class="event-card">
+            <h3>Annual Youth Revival</h3>
+            <p><strong>Date:</strong> 2025-08-15</p>
+            <p><strong>Time:</strong> 9:00 AM – 5:00 PM</p>
+            <p>This youth-led revival is packed with worship, drama, dance, and life-changing messages. All are welcome!</p>
+          </div>
+        </section>
+      
+        <!-- DYNAMIC EVENTS LIST -->
+        <section id="dynamic-events">
+          <h2>All Church Events</h2>
+          <div id="events-container"></div>
+        </section>
+      
+        <hr>
+      
+        <!-- LOGIN & ADMIN SECTION -->
+        <section class="admin-section">
+          <div id="login-box">
+            <h3>Login to Update Events</h3>
+            <input type="text" id="username" placeholder="Username"><br>
+            <input type="password" id="password" placeholder="Password"><br>
+            <button onclick="login()">Login</button>
+          </div>
+      
+          <div id="admin-panel" style="display:none;">
+            <h3>Manage Events</h3>
+            <div id="admin-events"></div>
+      
+            <h4>Add New Event</h4>
+            <input type="text" id="newTitle" placeholder="Title"><br>
+            <input type="date" id="newDate"><br>
+            <textarea id="newDesc" placeholder="Description"></textarea><br>
+            <button onclick="addEvent()">Add Event</button>
+          </div>
+        </section>
+      
+        <!-- VOLUNTEER CTA -->
+        <section class="volunteer-section">
+          <h2>Want to Help?</h2>
+          <p>Be part of what God is doing at RGC Suneka. Join our event volunteer team and help serve the church and community.</p>
+          <a href="contact.html" class="button">Volunteer Now</a>
+        </section>
+      
+        <!-- FAQ SECTION -->
+        <section class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq">
+            <h4>Can I attend if I'm not a member?</h4>
+            <p>Yes! All are welcome at any of our church events.</p>
+          </div>
+          <div class="faq">
+            <h4>Are events free?</h4>
+            <p>Most of our events are free. If an event requires registration, it will be mentioned in the description.</p>
+          </div>
+          <div class="faq">
+            <h4>How can I get updates?</h4>
+            <p>Follow us on social media or check back here for updates weekly.</p>
+          </div>
+        </section>
+      
+      </main>
+      
+
+<script>
+let events = JSON.parse(localStorage.getItem("churchEvents")) || [
+  {title: "Sunday Service", date: "2025-07-06", description: "Worship at 10am."}
+];
+
+function displayEvents(){
+  const container = document.getElementById("events-container");
+  container.innerHTML = "";
+  events.forEach(ev => {
+    container.innerHTML += `
+      <div class="event-card">
+        <h3>${ev.title}</h3>
+        <p><strong>Date:</strong> ${ev.date}</p>
+        <p>${ev.description}</p>
+      </div>
+    `;
+  });
+}
+
+function login(){
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+  if(user === "Mathew" && pass === "suneka2025"){
+    document.getElementById("login-box").style.display = "none";
+    document.getElementById("admin-panel").style.display = "block";
+    showAdminEvents();
+  } else {
+    alert("Wrong credentials");
+  }
+}
+
+function showAdminEvents(){
+  const container = document.getElementById("admin-events");
+  container.innerHTML = "";
+  events.forEach((ev, index) => {
+    container.innerHTML += `
+      <div class="event-card">
+        <h4>${ev.title}</h4>
+        <p><strong>Date:</strong> ${ev.date}</p>
+        <p>${ev.description}</p>
+        <button onclick="deleteEvent(${index})">Delete</button>
+      </div>
+    `;
+  });
+}
+
+function addEvent(){
+  const title = document.getElementById("newTitle").value;
+  const date = document.getElementById("newDate").value;
+  const desc = document.getElementById("newDesc").value;
+  if(title && date && desc){
+    events.push({title, date, description: desc});
+    localStorage.setItem("churchEvents", JSON.stringify(events));
+    displayEvents();
+    showAdminEvents();
+    document.getElementById("newTitle").value = "";
+    document.getElementById("newDate").value = "";
+    document.getElementById("newDesc").value = "";
+  } else {
+    alert("Fill all fields");
+  }
+}
+
+function deleteEvent(index){
+  if(confirm("Delete this event?")){
+    events.splice(index, 1);
+    localStorage.setItem("churchEvents", JSON.stringify(events));
+    displayEvents();
+    showAdminEvents();
+  }
+}
+
+displayEvents();
+</script>
+<div class="nav-buttons">
+  <a href="youth.html" class="btn">Next ➡</a>
+</div>
+
+  <footer>
+    <p>&copy; 2025 Redeemed Gospel Church - suneka</p>
+  </footer>
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>
